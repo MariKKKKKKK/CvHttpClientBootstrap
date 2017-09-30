@@ -17,17 +17,18 @@ export class BasicInfoComponent implements OnInit {
 
   name: string;
   surname: string;
-  contact: Contact;
+  contacts: Contact;
+
   ngOnInit() {
     this.getBasicInfo();
   }
 
-  getBasicInfo() {
-    this.cvService.getCvData().then(cv => {
-      this.basicInfo = cv.basicInfo;
-      this.name = cv.basicInfo.name;
-      this.surname = cv.basicInfo.surname;
-      this.contact = cv.basicInfo.contact;
+  getBasicInfo(): void {
+    this.cvService.getBasicInfoData().then(basicInfo => {
+      this.name = basicInfo.name;
+      this.surname = basicInfo.surname;
+      this.contacts = basicInfo.contact;
     });
   }
 }
+

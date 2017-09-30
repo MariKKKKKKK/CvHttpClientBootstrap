@@ -1,15 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import {CvService} from '../cv.service';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.scss']
+  styleUrls: ['./skills.component.scss'],
+  providers: [CvService]
+
 })
 export class SkillsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  skillsList: string[];
+  constructor(private cvService: CvService) {
   }
 
+  ngOnInit() {
+    this.getSkiillsData();
+  }
+  getSkiillsData() {
+    this.cvService.getSkillsData().then(skillsData => {
+      this.skillsList = skillsData;
+    });
+  }
 }

@@ -1,10 +1,9 @@
-<md-card>
-  <div>fasfafssf</div>
-  <div>fasfssf</div>
-  <div>fsasffs</div>
-  <div>fsasffs</div>
-
-  <div>fsasffs</div>
-  <div>fsasffs</div>
+<md-card >
+  <section class="mat-typography">
+    <h1>Education</h1>
+    <ul>
+      <li *ngFor="let educationItem of educationList | jsonIteration">{{educationItem}}</li>
+    </ul>
+  </section>
 
 </md-card>

@@ -1,9 +1,9 @@
 <md-card>
   <section class="mat-typography">
-    <h1>{{name}}</h1>
-    <h2>{{surname}}</h2>
+    <h1>{{name | uppercase}}</h1>
+    <h2>{{surname | uppercase}}</h2>
     <ul>
-      <li>Smth</li>
+      <li *ngFor="let contactItem of contacts | jsonIteration">{{contactItem}}</li>
     </ul>
   </section>
 
