@@ -1,7 +1,6 @@
+import {Cv} from './interfaces/cv';
 
-import {CvInterface} from './cv-interface';
-
-export const cvData: CvInterface = {
+export const cvData: Cv = {
   "basicInfo": {
     "name": "Markiian",
     "surname": "Proniuk",
