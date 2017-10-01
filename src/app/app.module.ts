@@ -1,16 +1,39 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material';
+import {CustomMaterialModule} from './custom-material.module';
+import {RouterModule, Routes} from '@angular/router';
+
 import {CvService} from './cv.service';
 import {AppComponent} from './app.component';
 import {BasicInfoComponent} from './basic-info/basic-info.component';
 import {EducationComponent} from './education/education.component';
 import {SkillsComponent} from './skills/skills.component';
-import { JsonIterationPipe } from './pipes/json-iteration.pipe';
+import {JsonIterationPipe} from './pipes/json-iteration.pipe';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+const routes: Routes = [
+  {path: '', redirectTo: '/basic-info', pathMatch: 'full'},
+  {
+    path: 'basic-info',
+    component: BasicInfoComponent
+  },
+  {
+    path: 'education',
+    component: EducationComponent
+  },
+  {
+    path: 'skills',
+    component: SkillsComponent
+  }
+];
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    CustomMaterialModule,
+    BrowserAnimationsModule
+  ],
   declarations: [
     AppComponent,
     BasicInfoComponent,
@@ -18,11 +41,7 @@ import { JsonIterationPipe } from './pipes/json-iteration.pipe';
     SkillsComponent,
     JsonIterationPipe
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatCardModule
-  ],
+
   providers: [CvService],
   bootstrap: [AppComponent]
 })

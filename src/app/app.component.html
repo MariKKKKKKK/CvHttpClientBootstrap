@@ -1,9 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <h1 class="mat-display-1">{{title | uppercase}}</h1>
-<app-basic-info></app-basic-info>
-<app-education></app-education>
-<app-skills></app-skills>
 <nav>
-  sfsfs
+  <a routerLink="/basic-info" routerLinkActive="active">BasicInfo</a>
+  <a routerLink="/education" routerLinkActive="active">Education</a>
+  <a routerLink="/skills" routerLinkActive="active">Skills</a>
 </nav>
+<router-outlet></router-outlet>
+
+
 
