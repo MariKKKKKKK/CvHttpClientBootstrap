@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
   name: 'jsonIteration'
@@ -6,8 +6,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class JsonIterationPipe implements PipeTransform {
 
   transform(value: any, args?: any): string[] {
-    const jsonValues: string[] = Object.values(value);
-    return jsonValues;
+    if (!value) {
+      return null;
+    }
+    return Object.values(value);
   }
 
 }
