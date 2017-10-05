@@ -11,6 +11,7 @@ import {Education} from '../interfaces/education';
 export class EducationComponent implements OnInit {
   educationList: Education;
   constructor(private cvService: CvService) {
+
   }
 
   ngOnInit() {

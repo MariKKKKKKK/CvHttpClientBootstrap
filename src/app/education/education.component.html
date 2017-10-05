@@ -1,9 +1,43 @@
+<!-- cols doesn't work here -->
+<md-grid-list cols="3" class="flexbox" rowHeight="400px">
+  <md-grid-tile class="col">
+    <md-card class="card card--margin">
+      <section class="mat-typography">
+        <md-card-title>Education</md-card-title>
+        <md-list>
+          <md-list-item *ngFor="let educationItem of educationList | jsonIteration">{{educationItem}}
+          </md-list-item>
+          <md-divider></md-divider>
+        </md-list>
+      </section>
+    </md-card>
+  </md-grid-tile>
+  <md-grid-tile class="col">
+    <md-card class="card card--margin">
+      <section class="mat-typography">
+        <md-card-title>For experimentational purposes only</md-card-title>
+        <md-list>
+          <md-list-item *ngFor="let educationItem of educationList | jsonIteration">{{educationItem}}
+          </md-list-item>
+          <md-divider></md-divider>
+        </md-list>
+      </section>
+    </md-card>
+  </md-grid-tile>
+  <md-grid-tile class="col">
+    <md-card class="card card--margin">
+      <section class="mat-typography">
+        <md-card-title>For experimentational purposes only</md-card-title>
+        <md-list>
+          <md-list-item *ngFor="let educationItem of educationList | jsonIteration">{{educationItem}}
+          </md-list-item>
+          <md-divider></md-divider>
+        </md-list>
+      </section>
+    </md-card>
+  </md-grid-tile>
+</md-grid-list>
 
-  <section class="mat-typography">
-    <h1>Education</h1>
-    <ul>
-      <li *ngFor="let educationItem of educationList | jsonIteration">{{educationItem}}</li>
-    </ul>
-  </section>
+
 
 
