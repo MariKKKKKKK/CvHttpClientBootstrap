@@ -18,8 +18,8 @@ export class EducationComponent implements OnInit {
   }
 
   getEducationData(): void {
-    this.cvService.getEducationData().then(educationData => {
-        this.educationList = educationData;
+    this.cvService.getCvData().then(cvData => {
+        this.educationList = cvData.education;
     });
   }
 

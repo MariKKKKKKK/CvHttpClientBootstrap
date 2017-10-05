@@ -24,10 +24,10 @@ export class BasicInfoComponent implements OnInit {
   }
 
   getBasicInfo(): void {
-    this.cvService.getBasicInfoData().then(basicInfo => {
-      this.name = basicInfo.name;
-      this.surname = basicInfo.surname;
-      this.contacts = basicInfo.contact;
+    this.cvService.getCvData().then(cvData => {
+      this.name = cvData.basicInfo.name;
+      this.surname = cvData.basicInfo.surname;
+      this.contacts = cvData.basicInfo.contact;
     });
   }
 }

@@ -17,8 +17,8 @@ export class SkillsComponent implements OnInit {
     this.getSkiillsData();
   }
   getSkiillsData() {
-    this.cvService.getSkillsData().then(skillsData => {
-      this.skillsList = skillsData;
+    this.cvService.getCvData().then(cvData => {
+      this.skillsList = cvData.skills;
     });
   }
 }
