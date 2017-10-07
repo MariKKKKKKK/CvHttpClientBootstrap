@@ -24,11 +24,13 @@ export class BasicInfoComponent implements OnInit {
   }
 
   getBasicInfo(): void {
-    this.cvService.getCvData().then(cvData => {
-      this.name = cvData.basicInfo.name;
-      this.surname = cvData.basicInfo.surname;
-      this.contacts = cvData.basicInfo.contact;
-    });
+    this.cvService.getCvData().subscribe(cvData => {
+        this.name = cvData.basicInfo.name;
+        this.surname = cvData.basicInfo.surname;
+        this.contacts = cvData.basicInfo.contact;
+      },
+      err => console.log(err)
+    );
   }
 }
 

@@ -19,9 +19,11 @@ export class EducationComponent implements OnInit {
   }
 
   getEducationData(): void {
-    this.cvService.getCvData().then(cvData => {
+    this.cvService.getCvData().subscribe(cvData => {
         this.educationList = cvData.education;
-    });
+    },
+      err => console.log(err)
+    );
   }
 
 }

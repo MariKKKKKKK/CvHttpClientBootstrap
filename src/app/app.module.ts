@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {CustomMaterialModule} from './custom-material.module';
+
 
 import {RouterModule, Routes} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
@@ -11,17 +11,15 @@ import {BasicInfoComponent} from './basic-info/basic-info.component';
 import {EducationComponent} from './education/education.component';
 import {SkillsComponent} from './skills/skills.component';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import {JsonIterationPipe} from './pipes/json-iteration.pipe';
 
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     AppRoutingModule,
-    CustomMaterialModule,
-    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent,

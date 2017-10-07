@@ -1,41 +1,8 @@
 
-  <!-- cols doesn't work here -->
-  <md-grid-list cols="3" class="flexbox" >
-    <md-grid-tile>
-      <md-card class="card card--margin">
-        <section class="mat-typography">
-          <md-card-title>{{name | uppercase}}</md-card-title>
-          <md-card-title>{{surname | uppercase}}</md-card-title>
-          <md-list>
-            <md-list-item *ngFor="let contactItem of contacts | jsonIteration">{{contactItem}}
-            </md-list-item>
-            <md-divider></md-divider>
-          </md-list>
-        </section>
-      </md-card>
-    </md-grid-tile>
-    <md-grid-tile>
-      <md-card class="card card--margin">
-        <section class="mat-typography">
-          <md-card-title>For experimentational purposes only</md-card-title>
-          <md-list>
-            <md-list-item *ngFor="let contactItem of contacts | jsonIteration">{{contactItem}}
-            </md-list-item>
-            <md-divider></md-divider>
-          </md-list>
-        </section>
-      </md-card>
-    </md-grid-tile>
-    <md-grid-tile>
-      <md-card class="card card--margin">
-        <section class="mat-typography">
-          <md-card-title>For experimentational purposes only</md-card-title>
-          <md-list>
-            <md-list-item *ngFor="let contactItem of contacts | jsonIteration">{{contactItem}}
-            </md-list-item>
-            <md-divider></md-divider>
-          </md-list>
-        </section>
-      </md-card>
-    </md-grid-tile>
-  </md-grid-list>
+<section class="basic-info">
+    <h1>{{name | uppercase}}</h1>
+    <h2>{{surname | uppercase}}</h2>
+    <ul>
+      <li *ngFor="let contactItem of contacts | jsonIteration">{{contactItem}}</li>
+    </ul>
+</section>

@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 import {Cv} from './interfaces/cv';
 
+import { Observable } from 'rxjs/Observable';
+import { HttpClient } from '@angular/common/http';
 
-import { Http } from '@angular/http';
 
-import 'rxjs/add/operator/toPromise';
 
 
 @Injectable()
 export class CvService {
   private cvUrl = 'http://prostoshubi.me/cv.json';
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
 
   }
-  getCvData(): Promise<Cv> {
-    return this.http.get(this.cvUrl).toPromise().then(response => response.json() as Cv ).catch(this.handleError);
+  getCvData(): Observable<Cv> {
+    return this.http.get(this.cvUrl);
   }
 
   private handleError(error: any): Promise<any> {

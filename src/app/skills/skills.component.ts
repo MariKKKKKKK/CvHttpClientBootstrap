@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CvService} from '../cv.service';
 
 @Component({
@@ -10,15 +10,19 @@ import {CvService} from '../cv.service';
 })
 export class SkillsComponent implements OnInit {
   skillsList: string[];
+
   constructor(private cvService: CvService) {
   }
 
   ngOnInit() {
     this.getSkiillsData();
   }
+
   getSkiillsData() {
-    this.cvService.getCvData().then(cvData => {
-      this.skillsList = cvData.skills;
-    });
+    this.cvService.getCvData().subscribe(cvData => {
+        this.skillsList = cvData.skills;
+      },
+      err => console.log(err)
+    );
   }
 }
