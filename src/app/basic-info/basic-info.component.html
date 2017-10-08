@@ -1,8 +1,23 @@
-
-<section class="basic-info">
+<section class="row basic-info">
+  <div class="col">
     <h1>{{name | uppercase}}</h1>
     <h2>{{surname | uppercase}}</h2>
     <ul>
       <li *ngFor="let contactItem of contacts | jsonIteration">{{contactItem}}</li>
     </ul>
+  </div>
+  <div class="col">
+    <h1>{{name | uppercase}}</h1>
+    <h2>{{surname | uppercase}}</h2>
+    <ul>
+      <li *ngFor="let contactItem of contacts | jsonIteration">{{contactItem}}</li>
+    </ul>
+  </div>
+  <div class="col">
+    <h1>{{name | uppercase}}</h1>
+    <h2>{{surname | uppercase}}</h2>
+    <ul>
+      <li *ngFor="let contactItem of contacts | jsonIteration">{{contactItem}}</li>
+    </ul>
+  </div>
 </section>
